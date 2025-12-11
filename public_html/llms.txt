@@ -1,0 +1,1 @@
+# For all AI user-agentsUser-agent: *Allow: /# Specific AI agents might be listed here in the future# User-agent: Google-Extended# Allow: /# User-agent: ChatGPT-User# Disallow: /private/

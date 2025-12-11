@@ -1,0 +1,16 @@
+#--- URL統一ルールここから ---
+
+RewriteEngine On
+
+# wwwなし → wwwあり（https）へ統一
+RewriteCond %{HTTP_HOST} ^nurse-restart\.com [NC]
+RewriteRule ^(.*)$ https://www.nurse-restart.com/$1 [R=301,L]
+
+# index.html を / にリダイレクト（トップとサブ）
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
+
+#--- キャッシュ制御（元の設定） ---
+SetEnvIf Request_URI ".*" Ngx_Cache_NoCacheMode=off
+SetEnvIf Request_URI ".*" Ngx_Cache_AllCacheMode
+
